@@ -82,10 +82,10 @@ for i, z in enumerate(zips):
                     out = [inputs[k], start[k], inputs[k+1], end[k], 
                            dist[k], sloc[k][0], sloc[k][1], eloc[k][0], 
                            eloc[k][1], instr[k]]
-                sr = open('success_runs.csv','a')
-                wr = csv.writer(sr)
-                wr.writerow(out)
-                sr.close()
+                    sr = open('success_runs.csv','a')
+                    wr = csv.writer(sr)
+                    wr.writerow(out)
+                    sr.close()
 
 
             time.sleep(34)
