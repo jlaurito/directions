@@ -47,7 +47,10 @@ for i, z in enumerate(zips):
             try:
                 val = urllib2.urlopen(url).read()
             except urllib2.HTTPError:
-                print 'HTTPError for', inputs
+                fr = open('failed_runs.csv','a')
+                wr = csv.writer(fr)
+                wr.writerow(list(inputs))
+                fr.close()
 
             directions = json.loads(val)
             if directions['routes'] == []:
