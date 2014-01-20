@@ -30,7 +30,7 @@ base = 'http://maps.googleapis.com/maps/api/directions/json'
 trail= '&sensor=false&mode=driving&region=US' 
 
 for i, z in enumerate(zips):
-    if i > 0:
+    if i > 7286:
         if i % 10 == 0:
             start= []
             end  = []
@@ -64,8 +64,8 @@ for i, z in enumerate(zips):
                 for j in xrange(0,9):
                     step = directions['routes'][0]['legs'][j]
 
-                    start.append(step['start_address'])
-                    end.append(step['end_address'])
+                    start.append(step['start_address'].encode('ascii', 'ignore'))
+                    end.append(step['end_address'].encode('ascii', 'ignore'))
                     dist.append(step['distance']['value'])
                     sloc.append((step['start_location']['lat'],
                                  step['start_location']['lng']))
@@ -91,6 +91,6 @@ for i, z in enumerate(zips):
                     sr.close()
 
 
-            time.sleep(34)
+            time.sleep(20)
 
 
