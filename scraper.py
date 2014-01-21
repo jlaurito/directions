@@ -30,8 +30,9 @@ base = 'http://maps.googleapis.com/maps/api/directions/json'
 trail= '&sensor=false&mode=driving&region=US' 
 
 for i, z in enumerate(zips):
-    if i > 7286:
+    if i > 21000:
         if i % 10 == 0:
+            print i
             start= []
             end  = []
             dist = []
@@ -91,6 +92,6 @@ for i, z in enumerate(zips):
                     sr.close()
 
 
-            time.sleep(20)
+            time.sleep(34)
 
 
